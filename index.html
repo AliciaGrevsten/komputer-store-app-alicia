@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css"
+        integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
+    <title>Komputer Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Komputer Store</a>
+    </nav>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+                <div class="card-header">Bank</div>
+                <div class="card-body">
+                    <h4 class="card-title">Alicia Grevsten</h4>
+                    <p class="card-text" id="balance">Balance: </p>
+                    <br>
+                    <button type="button" id="loan" class="btn btn-outline-warning" data-toggle="modal"
+                        data-target="#loanModal">Get a Loan</button>
+                </div>
+            </div> <!-- card 1-->
+            <br>
+            <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+                <div class="card-header">Work</div>
+                <div class="card-body">
+                    <p class="card-text" id="pay">Pay:</p>
+                    <br>
+                    <button type="button" id="bank" class="btn btn-outline-warning">Bank</button>
+                    <button type="button" id="work" class="btn btn-outline-warning">Work</button>
+                </div>
+            </div> <!-- card 2-->
+            <br>
+            <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+                <div class="card-header">Laptops</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <select class="custom-select" id="laptopselect">
+                            <option selected="">Select laptop</option>
+                        </select>
+                    </div>
+                    <p class="card-text">Features:</p>
+                    <ul id="feat"></ul>
+                </div>
+            </div> <!-- card 3-->
+        </div> <!-- row-->
+
+        <div class="row">
+
+            <div class="text-white bg-dark mb-3 ml-4" style="width: 92%;">
+                <div class="card-header">Laptop Information</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img id="laptopImage" style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="card-title" id="laptitle">Laptop Title</h4>
+                            <p class="card-text" id="price">Price:</p>
+                            <p class="card-text">Features:</p>
+                            <ul id="featList"></ul>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" id="buy" class="btn btn-outline-success">Buy</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div> <!-- card 2-->
+
+        </div>
+    </div> <!-- container -->
+
+
+    <!-- Modal start -->
+    <div class="modal" id="loanModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Take a Loan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="col-form-label" for="inputDefault">How much money do you want to loan?</label>
+                            <input type="text" class="form-control" placeholder="e.g 1000" id="amount">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="modalSubmit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal end-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+body {
+    background-color: goldenrod;
+}
+
+.card {
+    margin: 2%;
+    width: 50%;
+}
+
+#bank, #work {
+    margin-left: 10%;
+    margin-top: 12%;
+}
+
+#buy {
+    margin-top: 90%;
+}
+
+#loan {
+    margin-left: 25%;
+}
