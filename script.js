@@ -60,7 +60,7 @@ $(document).ready(function () {
     );
   });
 
-  //    Show features         NOT DONE - Need too remove <li> elements before adding new ones (on both)
+  //    Show features     
   $("#laptopselect").on("change", function () {
     let selected = $("#laptopselect").val();
 
@@ -81,16 +81,21 @@ $(document).ready(function () {
     })
   });
 
-  //  LOAN                    BUG - Can't increase balance after first increase unless you do something else inbetween
+  //  LOAN                
   $("#modalSubmit").click(function () {
     let amount = document.getElementById("amount").value;
     document.getElementById("amount").value = "";
     
-    if (amount <= (balance * 2) && tookLoan == false) {
-      balance += parseInt(amount);
-      setBalance(balance);
-      tookLoan = true;
-      alert('Successfully took a loan!');
+    if (amount <= (balance * 2)) {
+        if (tookLoan == false){
+            balance += parseInt(amount);
+            setBalance(balance);
+            tookLoan = true;
+            alert('Successfully took a loan!');
+        } else {
+            alert('You need to buy something before you make another loan.. We are not giving out free cash..');
+        }
+     
     } else {
         alert('The loan can not exeed your bank balance times 2.')
     }
